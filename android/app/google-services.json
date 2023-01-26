@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "369228009103",
+    "project_id": "just-f3525",
+    "storage_bucket": "just-f3525.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369228009103:android:697046f6115ce58acaeafa",
+        "android_client_info": {
+          "package_name": "com.krishanwalia.just"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369228009103-lc2nqc2n4kphbdat71eraa8htaddmhm0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJSXqvKG29WETa-8J44kXosA2gjjtu8vg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369228009103-lc2nqc2n4kphbdat71eraa8htaddmhm0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
