@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:just/screens/final.dart';
+import 'package:just/canBeDeleted/final.dart';
 
 // import 'package:just/screens/profile_page.dart';
 // import 'package:just/screens/profile_page.dart';

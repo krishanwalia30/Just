@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:just/screens/home_page.dart';
 
-import 'package:just/screens/profile_page.dart';
+import 'package:just/canBeDeleted/profile_page.dart';
 
 import '../utils/fire_auth.dart';
 import '../utils/validator.dart';
@@ -134,7 +135,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                               .pushAndRemoveUntil(
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  ProfilePage(user: user),
+                                                  HomePage(user: user),
                                             ),
                                             ModalRoute.withName('/'),
                                           );

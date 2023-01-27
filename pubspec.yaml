@@ -46,6 +46,13 @@ dependencies:
   firebase_analytics: ^10.1.0
   permission_handler: ^10.2.0
   firebase_app_check: ^0.1.1+8
+  image_fade: ^0.6.2
+  flutter_launcher_icons: ^0.11.0
+
+flutter_icons:
+  image_path: "assets/just.png"
+  android: true
+  ios: true
 
 dev_dependencies:
   flutter_test:

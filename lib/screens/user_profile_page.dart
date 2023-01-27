@@ -33,7 +33,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
   void initState() {
     imagePicker = new ImagePicker();
     _currentUser = widget.user;
-    _image = CloudFirestore.retrieveProfileImageUrl(_currentUser);
+    // _image = CloudFirestore.retrieveProfileImageUrl(_currentUser);/////////////////////////////////////////////////////////// cloud_storage change
 
     super.initState();
   }
@@ -78,10 +78,6 @@ class _UserProfilePageState extends State<UserProfilePage> {
                             setState(() {
                               _image = File(image.path);
                               userSelectedImageForProfile = true;
-
-                              print('done done done done done done');
-                              imageUrl = CloudFirestore.uploadProfileImage(
-                                  image, _currentUser);
                             });
                           },
                           child: (userSelectedImageForProfile)
@@ -110,6 +106,8 @@ class _UserProfilePageState extends State<UserProfilePage> {
                       ),
                     ],
                   )),
+
+                  // TEXT FIELD FOR USER NAME
                   Container(
                     margin: EdgeInsets.all(15),
                     child: TextFormField(
@@ -120,8 +118,15 @@ class _UserProfilePageState extends State<UserProfilePage> {
                         hintText: "${_currentUser.displayName}",
                         filled: true,
                       ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Please enter username";
+                        }
+                      },
                     ),
                   ),
+
+                  // TEXT FIELD FOR USER AGE
                   Container(
                     margin: EdgeInsets.all(15),
                     child: TextFormField(
@@ -132,8 +137,15 @@ class _UserProfilePageState extends State<UserProfilePage> {
                         hintText: " ",
                         filled: true,
                       ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Please enter Age";
+                        }
+                      },
                     ),
                   ),
+
+                  // TEXT FIELD FOR USER GENDER
                   DropdownButton(
                     itemHeight: 50,
                     focusColor: Colors.amber,
@@ -154,16 +166,23 @@ class _UserProfilePageState extends State<UserProfilePage> {
                       });
                     },
                   ),
+
+                  // TEXT FIELD FOR USER LOCATION
                   Container(
                     margin: EdgeInsets.all(15),
                     child: TextFormField(
                       controller: _userLocationController,
                       keyboardType: TextInputType.text,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Location: ',
-                        hintText: "${_currentUser.displayName}",
+                        hintText: "",
                         filled: true,
                       ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Please enter location";
+                        }
+                      },
                     ),
                   ),
                   TextButton(
@@ -171,12 +190,19 @@ class _UserProfilePageState extends State<UserProfilePage> {
                       if (_formkey.currentState!.validate()) {
                         String message;
                         try {
+                          // for uploading the image to the cloud storage
+                          imageUrl = CloudFirestore.uploadProfileImage(
+                              image, _currentUser);
+
+                          // for updating the data in the file
                           final collection = FirebaseFirestore.instance
                               .collection('userProfileData')
                               .doc(_currentUser.uid);
                           await collection.set({
                             'userid': _currentUser.uid,
-                            'username': _usernameController.text,
+                            'username': (_usernameController.text.isEmpty)
+                                ? 'asdf'
+                                : 'asdf', // cerate a validator
                             'age': _userAgeController.text,
                             'gender': _userGenderOption,
                             'location': _userLocationController.text

@@ -1,0 +1,21 @@
+To stop the user see his profile
+To arrange the profile of other in the users feed
+To add background
+To add the app logo in the home page
+to design the user profile page
+to make a drawer
+To design the user widgets
+To design the appbar for home page
+To design the appbar for user profile page
+To design the appbar for other's profile page
+To design the other profile page 
+To create more attributes such as hobbies and interests
+To create a match making algorithm
+To make the user upload multiple images for his profile and then retrieve them for other profile page
+
+
+# completed tasks--
+Add Hero to each profile 
+To change the app logo
+To make the image fade for the profile
+call the update image profile in the button and while submiting the fields must not be empty
