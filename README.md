@@ -1,6 +1,6 @@
-# just
+# JUST
 
-A new Flutter project.
+It's a social media application, just to make people have some a common place to meet with strangers and spend quality time. 
 
 ## Getting Started
 
