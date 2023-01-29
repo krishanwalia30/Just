@@ -33,7 +33,10 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           backgroundColor: MyColors.color6,
           centerTitle: true,
-          title: Image.asset('assets/just.png'),
+          title: Text(
+            'Just',
+            style: TextStyle(fontSize: 25),
+          ),
           actions: [
             InkWell(
               child: Icon(Icons.logout),
